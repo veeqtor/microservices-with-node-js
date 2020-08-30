@@ -1,0 +1,16 @@
+import mongoose from "mongoose";
+const paymentId = mongoose.Types.ObjectId().toHexString();
+export const stripe = {
+  charges: {
+    create: jest.fn().mockResolvedValue({
+      id: paymentId,
+    }),
+    list: jest.fn().mockResolvedValue({
+      data: [
+        {
+          
+        }
+      ],
+    }),
+  },
+};
